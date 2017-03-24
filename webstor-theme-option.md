@@ -16,7 +16,7 @@
 ### 主题包
 这是一个比较符合当前本人审美观的主题
 
-`src > LinArcX_1.icls` 	
+`Note > src > LinArcX_1.icls` 	
 ### 激活码:
 有效期一年
  	
