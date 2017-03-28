@@ -18,53 +18,53 @@ width: calc(1000px - 2px); => widht: 998px;
 
  除去head部分，剩下撑满
  
-	````
-	width: calc(100%-50px);
-	````
+````
+width: calc(100%-50px);
+````
   
 
 * background-position
 
- 一个为之宽度的容器做背景固定在右下角，然后力右边缘和底部分别都有个20px的距离。
-		
-	````
-	background-image: url(url.png);
-	background-position: calc(100%-20px, 100%-20px);
-	````
+一个为之宽度的容器做背景固定在右下角，然后力右边缘和底部分别都有个20px的距离。
+	
+````
+background-image: url(url.png);
+background-position: calc(100%-20px, 100%-20px);
+````
 	
 * 左右布局，37占比，中间有个10px的间距
 	
-	````
-	.sidebar
-	  float: left;
-	  widht: 30%;
-	  margin-right: 10px;
-	.main
-	  float: right;
-	  width: calc(70% - 10px);
-	````
+````
+.sidebar
+  float: left;
+  widht: 30%;
+  margin-right: 10px;
+.main
+  float: right;
+  width: calc(70% - 10px);
+````
 	
 * 栅格计算
 
-	````
-	.column-1-7 
-	  width: calc(100% / 7);
-	.column-2-7
-	  width: calc(100% / 7 * 2);
-	.column-3-7
-	  width: calc(100% / 7 * 3);
-	````
+````
+.column-1-7 
+  width: calc(100% / 7);
+.column-2-7
+  width: calc(100% / 7 * 2);
+.column-3-7
+  width: calc(100% / 7 * 3);
+````
 	
 * 变相设置box-sizing
  
-	````
-	.module
-	  padding: 10px;
-	  
-	  /* Same as box-sizing: padding-box */
-	  width: calc(40% - 20px);
-	  border: 2px solid black;
+````
+.module
+  padding: 10px;
+  
+  /* Same as box-sizing: padding-box */
+  width: calc(40% - 20px);
+  border: 2px solid black;
 	
-	  /* Same as box-sizing: border-box */
-	  width: calc(40% - 20px - 4px);
-	````
+  /* Same as box-sizing: border-box */
+  width: calc(40% - 20px - 4px);
+````
