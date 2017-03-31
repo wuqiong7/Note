@@ -1,10 +1,21 @@
 # Stylus
 
-keyframes什么鬼
+## 目录
+* [嵌套](#嵌套)
+* [混入模式](#混入模式)
+* [选择器](#选择器)
+* [CSS字面量](#CSS字面量)
+* [import](#import)
+* [extend](#extend)
+* [变量](#变量)
+* [Tips](#Tips)
 
-Sass 和 Stylus 更进一步，分别用 @at-root 和 / 符号作为嵌套时「根」规则集的选择器引用。这有什么用呢？举个例子，
 
------
+********
+
+* keyframes什么鬼?
+
+********
 
 ### 嵌套
 
@@ -121,14 +132,17 @@ device = "mobile"
 
 
 ### @extend
+
+**继承会影响CSS输出的顺序**
+
 Stylus: 只要选择器匹配，就可以生效  
 Less: 默认只继承父类本身的样式，如果要同时继承嵌套定义在父类作用域下的样式，得使用关键字 all
 > [Less文档](http://lesscss.org/features/#extend-feature-extend-all-)   :extend (.clsName all) 
 
-**继承会影响CSS输出的顺序**
 
 ### 变量
 **在Stylus中不要使用“@”符号开头声明变量**
+
 > 使用"@"符号开头来声明（0.22.4）变量，Stylus会进行编译，但其对应的值并不会赋值给变量。  
 > Less是必须以@开头
 
@@ -260,9 +274,11 @@ table
 
 
 
-### nibStylus插件(使用Autoprefixer、PostCSS替换)
+### nibStylus插件(使用PostCSS替换)
 
 > 它们强制我们使用新的语法。它们迭代慢于现代浏览器，所以当稳定版发布时会产生很多不必要的前缀，有时我们需要创建自己的mixins。
+> 
+
 
 
 ### 方法(看看了解思路即可)
@@ -330,5 +346,58 @@ border-radius()
 
 ## 推荐阅读
 * [Stylus官网](http://stylus-lang.com/)
-* [stylus中文版参-张鑫旭](http://www.zhangxinxu.com/jq/stylus/)
+* [Stylus中文版参-张鑫旭](http://www.zhangxinxu.com/jq/stylus/)
 * [再谈 CSS 预处理器](http://efe.baidu.com/blog/revisiting-css-preprocessors/)
+
+## 延伸阅读-PostCSS
+[PostCSS官网](http://postcss.org/)
+
+* [Autoprefixer](https://github.com/postcss/postcss): 最火的插件
+* [postcss-cssnext](http://cssnext.io/features/#custom-properties-set-apply): 涵盖了 Autoprefixer，可用最新css
+
+ 
+------
+**项目中引入PostCSS**
+
+`npm install postcss-loader --save-dev`
+
+`pm install postcss postcss-cssnext`
+
+webpack.config.js
+
+```javascript
+{
+  test: /\.css$/,
+  use: [
+    'style-loader',
+    {
+      loader: 'css-loader',
+      options: {
+        importLoaders: 1
+      }
+    },
+    'postcss-loader'
+  ]
+}
+```
+
+package.json
+
+````
+"browserslist": [
+	"> 1%",
+	"last 2 versions"
+]
+````
+
+postcss.config.js
+
+````
+module.exports = {
+    plugins: [
+        // require('autoprefixer')(),
+        require('postcss-cssnext')()
+    ]
+};
+````
+     
