@@ -1,5 +1,12 @@
 # Flexbox
 
+## 目录
+* [Flexbox相关属性](#属性)
+ * 盒模型计算规则(padding/margin/box-sizing) 
+* [margin:auto与Flexbox的巧妙结合](#margin:auto与Flexbox的巧妙结合)
+* [DEMO](#DEMO)
+* [相关阅读](#相关阅读)
+
 ## 属性
 * flex
 * display
@@ -158,7 +165,7 @@ flex-basis: 默认值auto
 数值小的排在前面。可以为负值
 
 
-## margin:auto与flexbox的巧妙结合
+## margin:auto与Flexbox的巧妙结合
 ### Tips
 * `margin:auto`仅针对当前的flex item，对其子元素无效。
 * 在flex计算中flex-bases与flexible lengths （main size与cross size）时，auto margins取值为0
@@ -170,15 +177,19 @@ flex-basis: 默认值auto
 
 * `margin:auto`对溢出的（overflowing）flex item无效
 
-## Demo
-* [戳这里调试demo(Flexbox)](http://jsbin.com/gogabiv/1/edit?css,output)
+## DEMO
+* [戳这里调试demo(Flexbox)](http://jsbin.com/gogabiv/edit?css,output)
 
-* [戳这里调试demo(margin:auto布局flexbox)](http://jsbin.com/kuxino/1/edit)
+* [戳这里调试demo(margin:auto布局Flexbox)](http://jsbin.com/kuxino/1/edit)
 
-## 延伸阅读
-* [CSS参考手册](http://www.css88.com/book/css/properties/flex/flex.htm)
+## 相关阅读
+* [CSS参考手册](http://www.css88.com/book/css/properties/flex/flex.htm) 
 * [深入解析CSS Flexbox](http://www.jianshu.com/p/ee3b2b45d85d)
-* [深入理解 flex 布局以及计算](https://www.w3cplus.com/css3/flexbox-layout-and-calculation.html)
-* margin:auto与flexbox的巧妙结合
+
+* FlexBox弹性盒子计算
+ * [FlexBox弹性盒子计算规则](https://segmentfault.com/a/1190000005006056)
+ * [带padding or box-sizing弹性盒子的相关计算](http://stackoverflow.com/questions/34753491/how-does-flex-shrink-factor-in-padding-and-border-box)  
+ * [深入理解 flex 布局以及计算](https://www.w3cplus.com/css3/flexbox-layout-and-calculation.html)
+* margin:auto与Flexbox的巧妙结合
  * [flex与margin结合做布局](http://www.voyax.me/2016/07/19/%E5%A6%82%E4%BD%95%E6%8E%A7%E5%88%B6flex%20item%E5%9C%A8%E4%B8%BB%E8%BD%B4%E4%B8%8A%E7%9A%84%E5%B8%83%E5%B1%80/)
  * [margin:auto与flexbox的巧妙结合](http://www.jianshu.com/p/beeb93a76830)

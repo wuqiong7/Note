@@ -1,6 +1,13 @@
-# 发布NPM资源包
+# NPM包管理
+* 有什么用
+* 怎么用
+ * [package.json](#package.json)
+ * [NPM版本管理](#NPM版本管理)
+ * [NPM常用命令](#NPM常用命令)
+ * [发布你的NPM包](#发布你的NPM包)
 
 ## 简单介绍NPM
+ NPM === node.js package management
 
 ### package.json
 
@@ -50,7 +57,7 @@
 version: a.b.c
 ````
 
-- a: 大版本号
+- a: 主版本号
  - 不向后兼容
 - b: 次要版本
  - 添加向后兼容的方法
@@ -84,6 +91,7 @@ version: a.b.c
 
 ````
 "oner-flexbox": "latest"
+"oner-flexbox": "*"
 ````
 
 
@@ -94,6 +102,13 @@ version: a.b.c
 ````
 npm init // 交互模式  (引导用户创建package.json，包含项目名称(必填)、版本(必填)、作者、git仓库地址)
 
+npm set init-author-name 'Your name'
+npm set init-author-email 'Your email'
+npm set init-author-url 'http://yourdomain.com'
+npm set init-license 'MIT'
+
+````
+````
 npm init -y // 非交互模式
 
 npm install
@@ -125,16 +140,23 @@ npm update express -g
 安装/卸载的同时，添加/删除package.json中dependencies/devDependencies对应的字段
 
 ````
-npm install express --save
+npm install express --save // -S
 
-npm uninstall express --save-dev
+npm uninstall express --save-dev // -D
+
+npm install express --save-exact
+````
+
+#### check项目依赖模块是否有跟新
+````
+npm outdated
 ````
 
 #### 查看版本
 
 ````
 // latest
-npm info underscore version
+npm view underscore version`
 
 // all
 npm view underscore versions
@@ -142,9 +164,7 @@ npm view underscore versions
 ````
 
 
-
-
-## 发布你的NPM资源包
+## 发布你的NPM包
 
 #### publish
 - 在npmjs.com上注册账号。[[registered]](https://www.npmjs.com/login)
@@ -158,9 +178,9 @@ npm view underscore versions
 
 -  `npm publish`
  > publish前，确认线上是否有重名的
-- check,发现不对
 
 #### update
+##### 发正式版
 - ...coding....
 - 看情况 升版本
 
@@ -172,6 +192,11 @@ npm view underscore versions
 	
 -  `npm publish`
 
+##### 发布beta(测试版本)
+- ...coding....
+- `npm version prerelease`
+- `npm publish --tag -beta`
+
 #### cover(不推荐)
 ````
 npm publish --force
@@ -180,4 +205,29 @@ npm publish --force
 #### remove(不推荐)
 ````
 npm unpublished 
+````
+
+
+
+#### 私有源配置
+
+- 统一配置
+
+````
+vi $HOME/.zshrc
+
+````
+
+````
+alias shu="npm --registry=http://npm.dtwave-inc.com:8080"
+
+````
+
+````
+source $HOME/.zshrc // 让命令生效
+````
+
+````
+shu login
+shu publish
 ````
