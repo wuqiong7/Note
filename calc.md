@@ -1,5 +1,9 @@
 # calc()
 
+**注意：用空白符把 - 和 + 隔起来，否则会产生解析错误！**
+> 表达式中有“+”和“-”时，其前后必须要有空，乘除也建议尽量有空格
+
+
 [兼容性](http://caniuse.com/#feat=calc)
 
 ## 支持写法
@@ -8,7 +12,7 @@
 width: calc(10% + 20%); => width: 30%;
 width: calc(150px * 2); => width: 300px;
 width: calc(150px + 50px); => width: 200px;
-width: calc(1000px - 2px); => widht: 998px;
+width: calc(1000px - 2px); => width: 998px;
 ````
 
 
@@ -16,10 +20,10 @@ width: calc(1000px - 2px); => widht: 998px;
 
 * panel布局
 
- 除去head部分，剩下撑满
+ 除去head部分，剩下撑满。 ==> [戳这里看calc()完美实现品字布局](http://jsbin.com/welotug/edit?html,css,output)
  
 ````
-width: calc(100%-50px);
+width: calc(100% - 50px);
 ````
   
 
@@ -37,7 +41,7 @@ background-position: calc(100%-20px, 100%-20px);
 ````
 .sidebar
   float: left;
-  widht: 30%;
+  width: 30%;
   margin-right: 10px;
 .main
   float: right;
