@@ -1,3 +1,7 @@
+## ES6笔记(style)
+
+### 编程风格
+
 - 使用`let`替换`var`，优先使用`const`
 
  > JavaScript 编译器会对const进行优化  
@@ -34,7 +38,6 @@
 	````
 
 - 使用扩展运算符（...）拷贝数组，Array.form()将类似数组的数据转成数据
-- 使用ESLint [使用](http://jscs.info/)
 - 使用export取代module.exports
 
 	> 只有一个输出使用`export default`
@@ -44,5 +47,6 @@
 	````
 	module.exports 
 	````
+- 使用ESLint [使用](http://jscs.info/)
 
 
