@@ -32,6 +32,7 @@ num会被取整
 'na'.repeat(NaN) // ''
 'na'.repeat(2.9) // 'na' 
 	
+
 ````
 
 ### 自动补全 padStart() / padEnd()
@@ -104,5 +105,6 @@ a **= 2; // 等同于 a = a * a;
 
 let b = 4;
 b **= 3; // 等同于 b = b * b * b;
-
 ````
+
+
