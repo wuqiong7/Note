@@ -22,5 +22,5 @@ console.log(lang);  //console.log(replace); //返回删除的项
 
 ### split
 
-`String.split(“and|or”)`
+`String.split(“separator”)`
 - 字符串分割
