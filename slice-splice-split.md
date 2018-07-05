@@ -2,6 +2,7 @@
 
 `arrayObject.slice(start,end)`
 
+- 元素组不变
 - 返回的是一个新数组
 - 含头不含未(start to end)
 
@@ -11,6 +12,7 @@
 
 `arrayObject.splice(index,howmany,item1,…..,itemX)`
 
+- 元素组会变
 - 第一个，第二个参数为必填
 - 第二个参数为要删除的项目数量,如果设置为 0, 则不会删除项目 
 
